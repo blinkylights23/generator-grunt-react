@@ -1,12 +1,12 @@
 {
-  "name": "author",
-  "version": "1.0.0",
-  "description": "Slate authoring prototype",
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
+  "author": "<%= author %>",
+  "license": "UNLICENSED",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Paul.Smith@slate.com",
-  "license": "UNLICENSED",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "axis": "^0.6.1",
@@ -42,7 +42,6 @@
     "js-beautify": "^1.6.2",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
-    "react-redux": "^4.4.5",
-    "request": "^2.72.0"
+    "react-redux": "^4.4.5"
   }
 }

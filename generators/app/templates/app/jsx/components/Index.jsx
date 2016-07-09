@@ -1,9 +1,6 @@
 'use strict';
 
 import React from 'react';
-import RichEditor from '../containers/RichEditor';
-import MarkupPreview from '../containers/MarkupPreview';
-
 
 class Index extends React.Component {
   constructor(props) {
@@ -12,8 +9,8 @@ class Index extends React.Component {
 
   render () {
     return (
-      <div id="editorContainer">
-        <RichEditor />
+      <div id="container">
+        Container
       </div>
     )
   }

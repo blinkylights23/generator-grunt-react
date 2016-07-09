@@ -12,7 +12,23 @@ describe('generator-grunt-react:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'dummyfile.txt'
+      '.editorconfig',
+      '.babelrc',
+      'package.json',
+      'app/pug/index.pug',
+      'app/jsx/index.jsx',
+      'app/jsx/components/Index.jsx',
+      'app/css/fonts.css',
+      'app/css/fontawesome/fonts/fontawesome-webfont.svg',
+      'app/css/fontawesome/fonts/fontawesome-webfont.woff',
+      'app/css/fontawesome/fonts/fontawesome-webfont.ttf',
+      'app/css/fontawesome/fonts/fontawesome-webfont.woff2',
+      'app/css/fontawesome/fonts/FontAwesome.otf',
+      'app/css/fontawesome/fonts/fontawesome-webfont.eot',
+      'app/css/fontawesome/css/font-awesome.min.css',
+      'app/styl/main.styl',
+      'Gruntfile.js',
+      '.gitignore'
     ]);
   });
 });

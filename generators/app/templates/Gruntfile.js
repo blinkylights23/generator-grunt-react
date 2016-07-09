@@ -1,4 +1,5 @@
 'use strict';
+// Created using <%= pkg.name %> <%= pkg.version %> on <%= (new Date).toISOString().split('T')[0] %>
 
 var poststylus = require('poststylus');
 var browserSync = require('browser-sync');
@@ -35,19 +36,19 @@ module.exports = function (grunt) {
         spawn: false
       },
       stylus: {
-        files: ['<%= destinations.app %>/styl/**/*', '<%= destinations.app %>/css/**/*'],
+        files: ['<%%= destinations.app %>/styl/**/*', '<%%= destinations.app %>/css/**/*'],
         tasks: ['stylus:build', 'copy:css', 'bs-inject-css']
       },
       assets: {
-        files: ['<%= destinations.app %>/assets/**/*'],
+        files: ['<%%= destinations.app %>/assets/**/*'],
         tasks: ['copy:build', 'bs-reload']
       },
       babel: {
-        files: ['<%= destinations.app %>/jsx/**/*'],
+        files: ['<%%= destinations.app %>/jsx/**/*'],
         tasks: ['clean:babel', 'babel:build', 'webpack:build', 'bs-inject-js']
       },
       pug: {
-        files: ['<%= destinations.app %>/pug/**/*.pug'],
+        files: ['<%%= destinations.app %>/pug/**/*.pug'],
         tasks: ['pug:build', 'bs-reload']
       }
     },
@@ -60,32 +61,32 @@ module.exports = function (grunt) {
           }
         },
         files: [
-          { src: '<%= destinations.app %>/pug/index.pug', dest: '<%= destinations.build %>/index.html' }
+          { src: '<%%= destinations.app %>/pug/index.pug', dest: '<%%= destinations.build %>/index.html' }
         ]
       }
     },
 
     clean: {
-      build: ['<%= destinations.build %>/**/*'],
+      build: ['<%%= destinations.build %>/**/*'],
       babel: [
-        '<%= destinations.app %>/js/*.js',
-        '<%= destinations.app %>/js/*.map'
+        '<%%= destinations.app %>/js/*.js',
+        '<%%= destinations.app %>/js/*.map'
       ]
     },
 
     copy: {
       build: {
         files: [
-          { src: '<%= destinations.app %>/assets/**', dest: '<%= destinations.build %>/assets' }
+          { src: '<%%= destinations.app %>/assets/**', dest: '<%%= destinations.build %>/assets' }
         ]
       },
       css: {
         files: [
           {
             expand: true,
-            cwd: '<%= destinations.app %>/css/',
+            cwd: '<%%= destinations.app %>/css/',
             src: '**/*',
-            dest: '<%= destinations.build %>/css/'
+            dest: '<%%= destinations.build %>/css/'
           }
         ]
       }
@@ -97,8 +98,8 @@ module.exports = function (grunt) {
           use: [ postcss ]
         },
         files: {
-          '<%= destinations.build %>/css/style.css': [
-            '<%= destinations.app %>/styl/main.styl'
+          '<%%= destinations.build %>/css/style.css': [
+            '<%%= destinations.app %>/styl/main.styl'
           ]
         }
       }
@@ -113,9 +114,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= destinations.app %>/jsx/',
+            cwd: '<%%= destinations.app %>/jsx/',
             src: ['**/*.jsx', '**/*.js'],
-            dest: '<%= destinations.app %>/js/',
+            dest: '<%%= destinations.app %>/js/',
             ext: '.js'
           }
         ]
@@ -124,9 +125,9 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= destinations.src %>/',
+            cwd: '<%%= destinations.src %>/',
             src: '*.js',
-            dest: '<%= destinations.build %>/'
+            dest: '<%%= destinations.build %>/'
           }
         ]
       }
@@ -135,10 +136,10 @@ module.exports = function (grunt) {
     webpack: {
       build: {
         entry: {
-          site: './<%= destinations.app %>/js/index.js'
+          site: './<%%= destinations.app %>/js/index.js'
         },
         output: {
-          path: './<%= destinations.build %>/js',
+          path: './<%%= destinations.build %>/js',
           filename: 'bundle.js'
         },
         module: {
